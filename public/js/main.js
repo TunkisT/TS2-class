@@ -1,34 +1,11 @@
-'use strict';
-console.log('main.ts55');
-const obj1 = {
-  name: 'James',
-  age: 30,
-  greet: () => {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  },
-};
-const obj2 = {
-  name: 'Mike',
-  age: 40,
-  greet: () => {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  },
-};
-console.log('obj1 ===', obj1);
-console.log('obj2 ===', obj2);
-class UserObj {
-  constructor(a, b) {
-    this.name = a;
-    this.age = b;
-  }
-  greet() {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  }
-}
-const obj3 = new UserObj('Jill', 35);
-obj3.greet();
-const obj4 = new UserObj('Bob', 47);
-console.log('obj4 ===', obj4);
-const usersArr = [obj3];
-usersArr.push(obj2);
-console.log('usersArr ===', usersArr);
+import Employee from './classes/Employee.js';
+import Person from './classes/Person.js';
+const p1 = new Person('James', 40);
+console.log('p1 ===', p1);
+p1.greet();
+const e1 = new Employee('Jill', 34, 33);
+const e2 = new Employee('John', 20, 50);
+e2.work(80);
+e2.greet();
+console.log('e1 ===', e1);
+console.log('e2 ===', e2);

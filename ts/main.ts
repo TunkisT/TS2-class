@@ -1,50 +1,13 @@
-console.log('main.ts55');
+import Employee from './classes/Employee.js';
+import Person from './classes/Person.js';
 
-type User = {
-  name: string;
-  age: number;
-  greet: () => void;
-};
+const p1 = new Person('James', 40);
+console.log('p1 ===', p1);
+p1.greet()
 
-const obj1: User = {
-  name: 'James',
-  age: 30,
-  greet: () => {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  },
-};
-
-const obj2: User = {
-  name: 'Mike',
-  age: 40,
-  greet: () => {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  },
-};
-
-console.log('obj1 ===', obj1);
-console.log('obj2 ===', obj2);
-
-class UserObj {
-  name: string;
-  age: number;
-
-  constructor(a: string, b: number) {
-    this.name = a;
-    this.age = b;
-  }
-
-  greet() {
-    console.log(`${this.name} is ${this.age} years old. Hi!`);
-  }
-}
-
-const obj3 = new UserObj('Jill', 35);
-obj3.greet();
-
-const obj4 = new UserObj('Bob', 47);
-console.log('obj4 ===', obj4);
-
-const usersArr: UserObj[] = [obj3];
-usersArr.push(obj2);
-console.log('usersArr ===', usersArr);
+const e1 = new Employee('Jill', 34, 33)
+const e2 = new Employee('John', 20, 50)
+e2.work(80)
+e2.greet()
+console.log('e1 ===', e1);
+console.log('e2 ===', e2);
