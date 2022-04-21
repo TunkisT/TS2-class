@@ -1,6 +1,8 @@
 import Employee from './classes/Employee.js';
 import Person from './classes/Person.js';
 import Project from './classes/Projects.js';
+import Calculator from './Edabit/Calculator.js';
+import Player from './Edabit/Player.js';
 
 // const p1 = new Person('James', 40);
 // console.log('p1 ===', p1);
@@ -22,8 +24,20 @@ import Project from './classes/Projects.js';
 // console.log('e2 ===', e2);
 
 // PROJECT ---------------------
- const proj1 = new Project('Game', 1500)
+//  const proj1 = new Project('Game', 1500)
 
- console.log('proj1 ===', proj1);
- proj1.finishProject()
- console.log('proj1 ===', proj1);
+//  console.log('proj1 ===', proj1);
+//  proj1.finishProject()
+//  console.log('proj1 ===', proj1);
+
+// EDABIT -------------
+const calculator = new Calculator(0, 0);
+console.log(calculator.add(10, 5));
+console.log(calculator.subtract(10, 5));
+console.log(calculator.multiply(10, 5));
+console.log(calculator.divide(10, 5));
+
+const pl1 = new Player('David Jones', 25, 175, 75);
+pl1.getAge();
+pl1.getHeight();
+pl1.getWeight();
