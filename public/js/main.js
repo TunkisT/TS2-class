@@ -1,5 +1,7 @@
 import Calculator from './Edabit/Calculator.js';
+import EdEmployee from './Edabit/EdEmployee.js';
 import Player from './Edabit/Player.js';
+import Point from './Edabit/Point.js';
 const calculator = new Calculator(0, 0);
 console.log(calculator.add(10, 5));
 console.log(calculator.subtract(10, 5));
@@ -9,3 +11,9 @@ const pl1 = new Player('David Jones', 25, 175, 75);
 pl1.getAge();
 pl1.getHeight();
 pl1.getWeight();
+const point1 = new Point(5, 15);
+console.log(point1.toString());
+const emp1 = new EdEmployee('John', 'Smith');
+console.log(emp1.fullname());
+console.log(emp1.email());
+console.log(emp1.firstname);
