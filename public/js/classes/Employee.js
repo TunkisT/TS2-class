@@ -8,5 +8,10 @@ export default class Employee extends Person {
     work(valSk) {
         this.hoursWorked += valSk;
     }
-    calcPay() { }
+    calcPay() {
+        let salary = this.payPerHour * this.hoursWorked;
+        console.log(`${this.name}: ${salary}`);
+        this.hoursWorked = 0;
+        return salary;
+    }
 }

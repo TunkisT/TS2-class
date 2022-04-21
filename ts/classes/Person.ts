@@ -10,7 +10,7 @@ export default class Person implements PersonInterface {
   name: string;
   age: number;
   constructor(name: string, age: number) {
-    this.id = `id_${Math.random() * 10}`;
+    this.id = `id_${Math.floor(Math.random() * 100)}`;
     this.name = name;
     this.age = age;
   }
