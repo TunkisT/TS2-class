@@ -1,6 +1,11 @@
-import Person from './Person.js';
+import Person, { PersonInterface } from './Person.js';
 
-export default class Employee extends Person {
+interface EmployeeInterface extends PersonInterface {
+  work(valSk: number): void;
+  // status: boolean;
+}
+
+export default class Employee extends Person implements EmployeeInterface {
   private hoursWorked: number;
   private payPerHour: number;
   constructor(name: string, age: number, payPerHour: number) {

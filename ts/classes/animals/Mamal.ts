@@ -1,4 +1,4 @@
-import Animal from './animal.js';
+import Animal from "./Animal";
 
 export default class Mamal extends Animal {
   fourLegs: boolean;

@@ -1,4 +1,9 @@
 "use strict";
+const readU = {
+    name: 'Jill',
+    id: 47,
+    role: 'editor',
+};
 const user = {
     name: 'james',
     id: 15,

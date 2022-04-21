@@ -9,6 +9,20 @@ interface User {
   role: 'admin' | 'editor';
 }
 
+interface ReadOnlyUser extends User {
+  readonly name: string;
+  readonly id: number;
+  readonly role: 'admin' | 'editor';
+}
+
+const readU: ReadOnlyUser = {
+  name: 'Jill',
+  id: 47,
+  role: 'editor',
+};
+
+// readU.role = 'admin';
+
 interface AdminUser extends User {
   role: 'admin';
   logName(prefix: string): void;
@@ -28,5 +42,5 @@ const adUser: AdminUser = {
   logName(prefix: string) {
     console.log(prefix);
   },
-//   birthDate: new Date('1980-01-01'),
+  //   birthDate: new Date('1980-01-01'),
 };

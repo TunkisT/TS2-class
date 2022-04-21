@@ -1,11 +1,11 @@
-interface PersonInterface {
+export interface PersonInterface {
   id: string;
   name: string;
   age: number;
   greet(): void;
 }
 
-export default class Person implements PersonInterface {
+export default abstract class Person implements PersonInterface {
   id: string;
   name: string;
   age: number;
@@ -17,4 +17,5 @@ export default class Person implements PersonInterface {
   greet() {
     console.log(`Hello, i am ${this.name}, and i am ${this.age} years old`);
   }
+  abstract calcPay(): number;
 }

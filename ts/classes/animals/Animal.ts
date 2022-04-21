@@ -1,4 +1,10 @@
-export default class Animal {
+interface AnimalInterface {
+  sound: string;
+  fluffy: boolean;
+  // breed: string;
+  makeSound(): void;
+}
+export default class Animal implements AnimalInterface {
   private breed: string;
   readonly fluffy: boolean;
   sound: string;
@@ -9,7 +15,7 @@ export default class Animal {
     this.sound = s;
   }
 
-  makeSound() {
+  makeSound(): void {
     console.log(`${this.sound}!!!!`);
   }
 }
