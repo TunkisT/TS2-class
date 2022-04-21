@@ -6,11 +6,14 @@ export interface PersonInterface {
 }
 
 export default abstract class Person implements PersonInterface {
+  // statine savybe priskiriama visai klasei
+  static count: number = 0;
   id: string;
   name: string;
   age: number;
   constructor(name: string, age: number) {
-    this.id = `id_${Math.floor(Math.random() * 100)}`;
+    Person.count++;
+    this.id = `id_${Person.count}`;
     this.name = name;
     this.age = age;
   }

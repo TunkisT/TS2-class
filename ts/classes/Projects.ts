@@ -1,22 +1,32 @@
 interface ProjectInterface {
-  id: string;
-  done: boolean;
-  title: string;
-  price: number;
+  finishProject(): void;
 }
 
 export default class Project implements ProjectInterface {
-  id: string;
-  done: boolean;
-  title: string;
-  price: number;
+  static projectCount: number = 0;
+  private _id: string;
+  private _done: boolean;
+  private _title: string;
+  private _price: number;
+
   constructor(title: string, price: number) {
-    this.id = `id_${Math.floor(Math.random() * 100)}`;
-    this.done = false;
-    this.title = title;
-    this.price = price;
+    this._id = `id_${++Project.projectCount}`;
+    this._done = false;
+    this._title = title;
+    this._price = price;
   }
+  // geteris gaut statusa isoreje
+  get done(): boolean {
+    return this._done;
+  }
+
+  get id(): string {
+    return this._id;
+  }
+
   finishProject() {
-    this.done = true;
+    this._done = true;
   }
 }
+
+const pr1 = new Project('footer', 150);
