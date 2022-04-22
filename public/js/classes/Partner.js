@@ -23,6 +23,14 @@ export default class Partner extends Person {
         found.finishProject();
     }
     calcPay() {
-        return 1;
+        const found = this._projects.filter((prObj) => prObj.done === true);
+        console.log('found ===', found);
+        let payment = 0;
+        found.forEach((sumObj) => {
+            payment += sumObj._price;
+        });
+        const finishedProjects = this._projects.filter((prObj) => prObj.done === true);
+        console.log(`Payment of projects : ${payment} $`);
+        return payment;
     }
 }

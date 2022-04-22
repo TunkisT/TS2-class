@@ -1,12 +1,15 @@
 export default class Project {
     constructor(title, price) {
-        this._id = `id_${++Project.projectCount}`;
         this._done = false;
+        this._id = `pr_${++Project.projectCount}`;
         this._title = title;
         this._price = price;
     }
     get done() {
         return this._done;
+    }
+    get price() {
+        return this._price;
     }
     get id() {
         return this._id;
@@ -16,4 +19,3 @@ export default class Project {
     }
 }
 Project.projectCount = 0;
-const pr1 = new Project('footer', 150);

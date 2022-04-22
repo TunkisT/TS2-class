@@ -18,22 +18,39 @@ export default class Partner extends Person {
   workDone(prId: string): void {
     // surasti tarp _project ta obj kurio id === prId
     const found: Project | undefined = this._projects.find(
-      (prObj) => prObj.id === prId
+      (prObj: Project) => prObj.id === prId
     );
     if (!found) {
       console.log('project not found', prId);
       return;
     }
     console.log('found ===', found);
-    found.finishProject()
+    found.finishProject();
   }
 
   calcPay(): number {
-    // atrinkti is _projects pabaigtus darbus filter
-    // susumuoti atliktu darbu price reduce,foreach,map
-    // is projects istrinti atliktus darbus
-    // cons.log apie ismokejima
-    // grazinti suma
-    return 1;
+    // atrinkti is _projects pabaigtus darbus (filter) ++
+    const found: Project = this._projects.filter(
+      (prObj: Project) => prObj.done === true
+    );
+    console.log('found ===', found);
+
+    // susumuoti atliktu darbu price (reduce, forEach, map) ++
+    let payment: number = 0;
+    found.forEach((sumObj: number) => {
+      payment += sumObj._price;
+    });
+
+    // is _projects istrinti atliktu darbus (filter)
+
+    const finishedProjects: Project = this._projects.filter(
+      (prObj: Project) => prObj.done === true
+    );
+
+    console.log(`Payment of projects : ${payment} $`);
+    return payment;
   }
 }
+
+// pranesti konsoleje apie ismokejima ++
+// grazinti moketina suma ++
