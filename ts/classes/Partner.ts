@@ -43,14 +43,16 @@ export default class Partner extends Person {
 
     // is _projects istrinti atliktu darbus (filter)
 
-    const finishedProjects: Project = this._projects.filter(
-      (prObj: Project) => prObj.done === true
-    );
+    console.log('this._projects before ===', this._projects);
 
-    console.log(`Payment of projects : ${payment} $`);
+    this._projects = this._projects.filter(
+      (prObj: Project) => prObj.done === false
+    );
+    console.log('this._projects after ===', this._projects);
+
+    // pranesti konsoleje apie ismokejima ++
+    // grazinti moketina suma ++
+    console.log(`Payment for ${this.name} : ${payment} $`);
     return payment;
   }
 }
-
-// pranesti konsoleje apie ismokejima ++
-// grazinti moketina suma ++

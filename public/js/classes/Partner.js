@@ -29,8 +29,10 @@ export default class Partner extends Person {
         found.forEach((sumObj) => {
             payment += sumObj._price;
         });
-        const finishedProjects = this._projects.filter((prObj) => prObj.done === true);
-        console.log(`Payment of projects : ${payment} $`);
+        console.log('this._projects before ===', this._projects);
+        this._projects = this._projects.filter((prObj) => prObj.done === false);
+        console.log('this._projects after ===', this._projects);
+        console.log(`Payment for ${this.name} : ${payment} $`);
         return payment;
     }
 }

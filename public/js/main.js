@@ -23,6 +23,7 @@ console.log('parJohn ===', parJohn);
 console.log('parJill ===', parJill);
 parJohn.workDone('pr_2');
 parJohn.workDone('pr_1');
+parJill.workDone('pr_3');
 console.log('Person.count ===', Person.count);
-[pr1, pr2, pr3, pr4, pr5].forEach((pr) => console.log(pr));
 parJohn.calcPay();
+parJill.calcPay();
