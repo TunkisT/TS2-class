@@ -57,5 +57,26 @@ console.log('Person.count ===', Person.count);
 
 // [pr1, pr2, pr3, pr4, pr5].forEach((pr) => console.log(pr));
 
-parJohn.calcPay();
-parJill.calcPay();
+// parJohn.calcPay();
+// parJill.calcPay();
+
+let workersArr: (Employee | Partner)[] = [];
+workersArr = workersArr.concat(e1, e2, parJohn, parJill);
+console.log('workersArr ===', workersArr);
+
+const alguArr: number[] = workersArr.map((pObj: Employee | Partner) => {
+  return pObj.calcPay();
+});
+
+console.log('alguArr ===', alguArr);
+
+let allSum = 0;
+alguArr.forEach((x) => {
+  allSum += x;
+});
+console.log('allSum ===', allSum);
+console.log(Math.max(...alguArr));
+
+const namePayArr = workersArr.map(obj => {
+    return {name: obj.name, pay: obj.name}
+} )

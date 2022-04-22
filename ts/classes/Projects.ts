@@ -1,6 +1,7 @@
 interface ProjectInterface {
   finishProject(): void;
   readonly done: boolean;
+  readonly price: number;
 }
 
 export default class Project implements ProjectInterface {
@@ -8,20 +9,16 @@ export default class Project implements ProjectInterface {
   private _id: string;
   private _done: boolean = false;
   private _title: string;
-  private _price: number;
+  readonly price: number;
 
   constructor(title: string, price: number) {
     this._id = `pr_${++Project.projectCount}`;
     this._title = title;
-    this._price = price;
+    this.price = price;
   }
   // geteris gaut statusa isoreje
   get done(): boolean {
     return this._done;
-  }
-
-  get price(): number {
-    return this._price;
   }
 
   get id(): string {

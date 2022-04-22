@@ -3,13 +3,10 @@ export default class Project {
         this._done = false;
         this._id = `pr_${++Project.projectCount}`;
         this._title = title;
-        this._price = price;
+        this.price = price;
     }
     get done() {
         return this._done;
-    }
-    get price() {
-        return this._price;
     }
     get id() {
         return this._id;

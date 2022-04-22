@@ -30,15 +30,14 @@ export default class Partner extends Person {
 
   calcPay(): number {
     // atrinkti is _projects pabaigtus darbus (filter) ++
-    const found: Project = this._projects.filter(
+    const doneProjects: Project[] = this._projects.filter(
       (prObj: Project) => prObj.done === true
     );
-    console.log('found ===', found);
 
     // susumuoti atliktu darbu price (reduce, forEach, map) ++
     let payment: number = 0;
-    found.forEach((sumObj: number) => {
-      payment += sumObj._price;
+    doneProjects.forEach((sumObj: Project) => {
+      payment += sumObj.price;
     });
 
     // is _projects istrinti atliktu darbus (filter)
