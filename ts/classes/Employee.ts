@@ -16,6 +16,9 @@ export default class Employee extends Person implements EmployeeInterface {
   work(valSk: number) {
     this.hoursWorked += valSk;
   }
+  get hourlyPay(): number {
+    return this.payPerHour;
+  }
 
   calcPay(): number {
     let salary: number = this.payPerHour * this.hoursWorked;

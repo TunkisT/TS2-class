@@ -1,5 +1,6 @@
 import Employee from './classes/Employee.js';
 import Partner from './classes/Partner.js';
+import Ui from './classes/UI.js';
 console.log('html.js');
 const form = document.getElementById('addPerson');
 const nameEl = document.getElementById('name');
@@ -14,10 +15,13 @@ form === null || form === void 0 ? void 0 : form.addEventListener('submit', (e) 
     if ((workerType === null || workerType === void 0 ? void 0 : workerType.value) === 'em') {
         console.log('employee data =', name, age, pay);
         const e1 = new Employee(name, age, pay);
+        Ui.addWorkerRow(e1);
+        console.log('Ui ===', Ui.workers);
     }
     else {
         console.log('partner data =', name, age);
         const p1 = new Partner(name, age);
+        Ui.addWorkerRow(p1);
     }
 });
 workerType === null || workerType === void 0 ? void 0 : workerType.addEventListener('change', (e) => {
